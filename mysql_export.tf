@@ -26,7 +26,7 @@ resource "aws_lambda_function" "mysql_export" {
   environment {
     variables = {
       # DEBUG  = "yes"
-      BUCKET = "backups-${var.account_id}"
+      BUCKET = "${aws_s3_bucket.backups.id}"
     }
   }
 
