@@ -1,7 +1,8 @@
 ## Description
 
 This Python function exports data from a MySQL database using the classic
-mysqldump(1) command. It is designed to be run as an AWS Lambda function.
+mysqldump(1) command. It is designed to be run as an AWS Lambda function and
+load config from Parameter Store.
 
 ## Test
 
