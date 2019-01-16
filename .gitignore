@@ -1,5 +1,6 @@
 build/release.zip
 *.tfstate
+*.tfstate.backup
 .terraform/
 .tfplan
 result.json
