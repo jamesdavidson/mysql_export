@@ -23,6 +23,15 @@ docker run --rm mysql_export cat /build/release.zip > build\release.zip
 terraform apply -target=aws_lambda_function.mysql_export
 ```
 
+## Config
+
+```
+aws ssm put-parameter \
+ --name /dev/env.json \
+ --type SecureString \
+ --value '{"MYSQL_USERNAME":"myapp","MYSQL_PASSWORD":"secret","MYSQL_HOSTNAME":"myapp-dev.rds.amazon.com","MYSQL_DATABASE":"myapp"}'
+```
+
 ## Run
 
 ```
