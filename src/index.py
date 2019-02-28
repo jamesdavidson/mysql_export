@@ -23,6 +23,7 @@ def handler(event, context):
 
     bucket = os.environ['BUCKET']
     app_env = event['APP_ENV'] # dev, prod, uat, test, ...
+    metadata = event.get('METADATA', {}) # optional S3 object metadata
 
     if app_env != 'local':
       import boto3
@@ -80,6 +81,7 @@ def handler(event, context):
         Key=params['k'],
         Body=open(params['f'], 'rb'),
         ContentType='application/gzip',
+        Metadata=metadata,
       )
 
     if DEBUG:
