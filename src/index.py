@@ -1,6 +1,6 @@
 # Load application config from Parameter Store depending on event['APP_ENV'] and
 # export the data from MySQL using mysqldump(1) bundled in working directory,
-# compress it and to S3.
+# compress the export file using gzip and upload it to S3.
 #
 import os
 import re
